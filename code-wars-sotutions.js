@@ -9,3 +9,12 @@ function createPhoneNumber(numbers){
   return format;
 }
 
+function squareDigits(num){
+  // I need to split the number to square each number, but since split is a string method, I fist need to convert num into string.
+  num = num.toString().split("")
+  // I used .map to square each number and joined then together and surrounded it by Number() because the answer has to be a number, not a string.
+  return Number(num.map(n => n ** 2).join(""))
+}
+
+
+
