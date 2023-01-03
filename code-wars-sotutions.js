@@ -45,7 +45,19 @@ function inArray(array1,array2) {
   return arr.sort();
 }
 
-
-
+function duplicateCount(text){
+  // First, I lowered all passing text to lowerCase because the test is case sensitive and stored in lower variable.
+  let lower = text.toLowerCase();
+  // I initialized an empty arr because I need to store the true value in it.
+  let arr = [];
+  // Then, I used for loop to iterate over lower variable and using conditional statement and .indexOf() method, to check wheather their indexes are different. If they are, then push that char in arr array.
+  for (let i = 0; i < lower.length; i++) {
+    if (lower.indexOf(lower[i]) !== i) {
+      arr.push(lower[i]);
+    }
+  }
+  // I used new Set method to remove the dublicates elements and return the length of that array.
+  return [...new Set(arr)].length;
+}
 
 
