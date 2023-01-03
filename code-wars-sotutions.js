@@ -60,4 +60,38 @@ function duplicateCount(text){
   return [...new Set(arr)].length;
 }
 
+function findUniq(arr) {
+  // same method as firstNonRepeatingLetter();
+  for (let num of arr) {
+    if (arr.indexOf(num) === arr.lastIndexOf(num)) {
+      return num;
+    }
+  }
+}
+function findOutlier(integers) {
+  // I initialized two elements, even and odd and used .filter methods to push even numbers in even variable, and odd numbers in odd variables.
+  let even = integers.filter(num => num % 2 === 0);
+  let odd = integers.filter(num => num % 2 !== 0);
+  // Then I used conditional statement to check the length of odd variable. If it is one, then the odd is the outlier, else it's the even one. Since the answer must a number and not an array, I return the first index of that array, which gave me the ourlier number
+  if (odd.length === 1) {
+    return odd[0];
+  }
+  return even[0];
+}
+
+function likes(names) {
+  if (names.length === 0) {
+    return `no one likes this`;
+  } else if (names.length === 1) {
+    return `${names[0]} likes this`;
+  } else if (names.length === 2) {
+    return `${names[0]} and ${names[1]} like this`;
+  } else if (names.length === 3) {
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`
+  } else {
+    return `${names[0]}, ${names[1]} and ${names.slice(2).length} others like this`
+  }
+  // I used interpolation to return a string depending on the length of names array. In the else statement, I used slice() method to return an array of names that exclude the first two names and return the length of that array. 
+}
+
 
