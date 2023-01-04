@@ -94,4 +94,16 @@ function likes(names) {
   // I used interpolation to return a string depending on the length of names array. In the else statement, I used slice() method to return an array of names that exclude the first two names and return the length of that array. 
 }
 
+function solution(number) {
+  // I initialied a sum with 0 and returned it at the end. If the passing number is < 0, then it wouldn't even go through the for loop and autometically return 0.
+  let sum = 0;
+  // I then iterate over the number. If i is divisible by 3 or 5, sum = sum + i. 
+  for (let i = 0; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
 
